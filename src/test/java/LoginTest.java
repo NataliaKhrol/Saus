@@ -2,15 +2,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.assertEquals;
 
 public class LoginTest extends BaseTest {
     @Test
-    public void firstLogin() {
+    public void correctLogin() {
         browser.findElement(By.id("user-name")).sendKeys("standard_user");
         browser.findElement(By.id("user-name")).sendKeys(Keys.CONTROL + "A");
-
         browser.findElement(By.id("user-name")).sendKeys(Keys.BACK_SPACE);
         browser.findElement(By.id("user-name")).sendKeys("standard_user");
         browser.findElement(By.xpath("//*[@data-test='password']")).sendKeys("secret_sauce");
