@@ -25,7 +25,7 @@ public class LoginTest extends BaseTest {
     @DataProvider(name = "incorrectLoginData")
     public Object[][] loginData() {
         return new Object[][]{
-                {"locked_out_user", password, "Epic sadface: Sorry, this jyyytuser has been locked out."}/*,
+                {"locked_out_user", password, "Epic sadface: Sorry, this user has been locked out."}/*,
                 {"", password, "Epic sadfffface: Username is required"}
                 {user, "", "Epic sadface: Password is required"},
                 {"Standard_user", password, "Epic sadface: Username and password do not match any user in this service"}
