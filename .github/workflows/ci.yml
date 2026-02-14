@@ -5,6 +5,7 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -27,7 +28,7 @@ jobs:
         if: always()
         run: mvn allure:report
 
-      - name: Upload Allure results
+      - name: Upload Allure report
         if: always()
         uses: actions/upload-artifact@v4
         with:
