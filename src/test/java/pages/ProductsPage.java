@@ -19,13 +19,17 @@ public class ProductsPage extends BasePage {
         return driver.findElement(title).isDisplayed();
     }
 
-    public void addGoodsToCart(String goodsName) {
+    public ProductsPage addGoodsToCart(String goodsName) {
         By addToCart = By.xpath(ADD_TO_CART_PATTERN.formatted(goodsName));
         driver.findElement(addToCart).click();
+
+        return this;
     }
 
-    public void addGoodsToCart(int goodsIndex) {
+    public ProductsPage addGoodsToCart(int goodsIndex) {
         driver.findElements(By.xpath("//*[text()='Add to cart']")).get(goodsIndex).click();
+
+        return this;
     }
 
     public String checkCounterValue() {
@@ -36,7 +40,9 @@ public class ProductsPage extends BasePage {
         return driver.findElement(cartCounter).getCssValue("background-color");
     }
 
-    public void switchToCart() {
+    public ProductsPage switchToCart() {
         driver.findElement(cartCounter).click();
+
+        return this;
     }
 }

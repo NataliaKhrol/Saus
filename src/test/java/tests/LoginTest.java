@@ -15,8 +15,9 @@ public class LoginTest extends BaseTest {
     public void correctLogin() {
         System.out.println("LoginTest.correct !!!!! in thread: " + Thread.currentThread().getId());
 
-        loginPage.open();
-        loginPage.loginUser(withAdminPermission());
+        loginPage
+                .open()
+                .loginUser(withAdminPermission());
 
         assertTrue(productsPage.isTitleIsDisplayed(), "Заголовок не виден");
         assertEquals(productsPage.checkTitleName(), PRODUCTS.getDisplayName(), "Не верный заголовок");
@@ -42,8 +43,9 @@ public class LoginTest extends BaseTest {
     @Test(dataProvider = "incorrectLoginData", description = "тест проверяет авторизацию заблокированного пользователя", invocationCount = 1, priority = 3)
     public void incorrectLogin(String user, String password, String errorMsg) {
         System.out.println("LoginTest.incorrect !!!!! in thread: " + Thread.currentThread().getId());
-        loginPage.open();
-        loginPage.login(user, password);
+        loginPage
+                .open()
+                .login(user, password);
 
         assertTrue(loginPage.isErrorDisplayed(), "Нет сообщения об ошибке");
         assertEquals(loginPage.getErrorText(), errorMsg,

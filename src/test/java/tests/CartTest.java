@@ -14,12 +14,16 @@ public class CartTest extends BaseTest {
     public void checkGoodsAdded() {
         System.out.println("CartTest.correct !!!!! in thread: " + Thread.currentThread().getId());
 
-        loginPage.open();
-        loginPage.loginUser(withAdminPermission());
+        loginPage
+                .open()
+                .loginUser(withAdminPermission());
         assertEquals(productsPage.checkTitleName(), PRODUCTS.getDisplayName());
 
-        productsPage.addGoodsToCart(goodsName);
-        productsPage.switchToCart();
+        productsPage
+                .addGoodsToCart(goodsName)
+                .switchToCart()
+                .addGoodsToCart("")
+                .isTitleIsDisplayed();
 
         assertEquals(cartPage.checkTitleName(), CART.getDisplayName());
 
