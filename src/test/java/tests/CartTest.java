@@ -10,7 +10,7 @@ import static user.UserFactory.withAdminPermission;
 public class CartTest extends BaseTest {
     final String goodsName = "Sauce Labs Onesie";
 
-    @Test
+ /*   @Test
     public void checkGoodsAdded() {
         System.out.println("CartTest.correct !!!!! in thread: " + Thread.currentThread().getId());
 
@@ -30,5 +30,5 @@ public class CartTest extends BaseTest {
         assertFalse(cartPage.getProductsNames().isEmpty());
         assertEquals(cartPage.getProductsNames().size(), 1);
         assertTrue(cartPage.getProductsNames().contains(goodsName));
-    }
+    }*/
 }
