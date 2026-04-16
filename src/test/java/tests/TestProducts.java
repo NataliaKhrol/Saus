@@ -8,7 +8,7 @@ import static enums.TitleNaming.PRODUCTS;
 import static org.testng.Assert.*;
 import static user.UserFactory.withAdminPermission;
 
-public class ProductsTest extends BaseTest {
+public class TestProducts extends BaseTest {
     List<String> goodsList =
             List.of("Test.allTheThings() T-Shirt (Red)",
                     "Sauce Labs Onesie", "Sauce Labs Fleece Jacket");
